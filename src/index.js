@@ -2,7 +2,7 @@ import snakeCase from 'lodash.snakecase'
 import camelCase from 'lodash.camelcase'
 
 /**
- * deeply converts key of an object from one case to another
+ * deeply converts keys of an object from one case to another
  * @param {object} object to convert
  * @param {function} function to convert key.
  * @return converted object
