@@ -3,8 +3,12 @@
   "version": "0.0.0",
   "description": "transform object keys to different cases",
   "main": "./dist/index.js",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "build": "babel src -d dist",
+    "prepublish": "npm run build",
     "test": "mocha --compilers js:babel-core/register test/**.js"
   },
   "repository": {
