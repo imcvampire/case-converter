@@ -1,3 +1,10 @@
 language: node_js
 node_js:
   - "5"
+
+deploy:
+  provider: npm
+  email: "moritz@travelperk.com"
+  api_key: "e5b09541-b94c-463c-8cd5-9e8e5e047f5d"
+  on:
+    tags: true
