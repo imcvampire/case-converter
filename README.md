@@ -4,9 +4,8 @@ A library that converts objects to different case conventions. Useful when consu
 conventions, e.g. Python.
 
 ## Features
-
-camelCase to snake_case
-snake_case to camelCase
+- camelCase to snake_case
+- snake_case to camelCase
 
 ## Example:
 
