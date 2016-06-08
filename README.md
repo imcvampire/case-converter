@@ -1,6 +1,4 @@
-# case-converter
-[![Build Status](https://travis-ci.org/Moezalez/case-converter.svg?branch=master)](https://travis-ci.org/Moezalez/case-converter)
-[![js-standard-style](https://cdn.rawgit.com/feross/standard/master/badge.svg)](https://github.com/feross/standard)
+# case-converter [![Build Status](https://travis-ci.org/Moezalez/case-converter.svg?branch=master)](https://travis-ci.org/Moezalez/case-converter)
 
 A library that converts objects to different case conventions. Useful when consuming APIs of services with different
 conventions, e.g. Python.
