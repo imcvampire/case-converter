@@ -1,6 +1,6 @@
 # case-converter
 
-A library to convert objects following different case conventions. Useful when consuming APIs of services with different
+A library that converts objects to different case conventions. Useful when consuming APIs of services with different
 conventions, e.g. Python.
 
 ## Features
