@@ -7,6 +7,9 @@ conventions, e.g. Python.
 - camelCase to snake_case
 - snake_case to camelCase
 
+## Install
+`npm install case-converter`
+
 ## Example:
 
 ```JavaScript
