@@ -7,7 +7,11 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ### Changed
 ### Fixed
 
-## [0.1.0] - 2016-03-31
+## [0.1.1] - 2016-06-08
+### Changed
+- Minor change in documentation
+
+## [0.1.0] - 2016-06-08
 ### Added
 - snake_case to camelCase
 - camelCase to sname_case
