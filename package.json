@@ -1,0 +1,35 @@
+{
+  "name": "case-converter",
+  "version": "0.0.0",
+  "description": "transform object keys to different cases",
+  "main": "./dist/index.js",
+  "scripts": {
+    "build": "babel src -d dist",
+    "test": "mocha --compilers js:babel-core/register test/**.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://Moezalez@github.com/Moezalez/case-converter.git"
+  },
+  "keywords": [
+    "camelCase",
+    "snake_case",
+    "camel",
+    "snake",
+    "case",
+    "converter"
+  ],
+  "author": "Moritz Sattler",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Moezalez/case-converter/issues"
+  },
+  "homepage": "https://github.com/Moezalez/case-converter#readme",
+  "devDependencies": {
+    "babel": "^6.5.2",
+    "babel-cli": "^6.9.0",
+    "babel-preset-es2015": "^6.9.0",
+    "mocha": "^2.5.3",
+    "standard": "^7.1.2"
+  }
+}
