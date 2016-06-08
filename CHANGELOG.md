@@ -18,4 +18,4 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ## [0.1.0] - 2016-06-08
 ### Added
 - snake_case to camelCase
-- camelCase to sname_case
+- camelCase to snake_case
