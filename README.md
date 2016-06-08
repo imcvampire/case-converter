@@ -1,4 +1,4 @@
-# case-converter [![Build Status](https://travis-ci.org/Moezalez/case-converter.svg?branch=master)](https://travis-ci.org/Moezalez/case-converter)
+# case-converter [![Build Status](https://travis-ci.org/Moezalez/case-converter.svg?branch=master)](https://travis-ci.org/Moezalez/case-converter)[![Coverage Status](https://coveralls.io/repos/github/Moezalez/case-converter/badge.svg?branch=master)](https://coveralls.io/github/Moezalez/case-converter?branch=master)
 
 A library that converts objects to different case conventions. Useful when consuming APIs of services with different
 conventions, e.g. Python.
