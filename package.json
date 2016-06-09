@@ -1,6 +1,6 @@
 {
   "name": "case-converter",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "transform object to use different case conventions",
   "main": "./dist/index.js",
   "files": [

@@ -7,6 +7,10 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ### Changed
 ### Fixed
 
+## [0.2.1] - 2016-06-09
+### Fixed
+- Fixed import issue with certain environments 
+
 ## [0.2.0] - 2016-06-08
 ### Changed
 - Key conversion is now done by lodash
