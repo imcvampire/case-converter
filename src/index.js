@@ -1,5 +1,6 @@
 import snakeCase from 'lodash.snakecase'
 import camelCase from 'lodash.camelcase'
+import kebabCase from 'lodash.kebabCase'
 
 /**
  * deeply converts keys of an object from one case to another
@@ -30,5 +31,6 @@ const convertCase = (oldObject, converterFunction) => {
 
 export const toCamelCase = obj => convertCase(obj, camelCase)
 export const toSnakeCase = obj => convertCase(obj, snakeCase)
+export const toKebabCase = obj => convertCase(obj, kebabCase)
 
-module.exports = { toCamelCase, toSnakeCase }
+module.exports = { toCamelCase, toSnakeCase, toKebabCase }
