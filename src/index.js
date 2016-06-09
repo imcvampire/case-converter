@@ -1,6 +1,6 @@
 import snakeCase from 'lodash.snakecase'
 import camelCase from 'lodash.camelcase'
-import kebabCase from 'lodash.kebabCase'
+import kebabCase from 'lodash.kebabcase'
 
 /**
  * deeply converts keys of an object from one case to another
