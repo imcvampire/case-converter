@@ -13,8 +13,7 @@ conventions, e.g. Python.
 ## Example:
 
 ```JavaScript
-
-  const caseConverter = require('case-converter')
+  import { toCamelCase, toSnakeCase } from 'case-converter'
 
   const snakeCase = {
     an_object: {
@@ -27,7 +26,7 @@ conventions, e.g. Python.
     ]
   }
 
-  const camelCase = caseConverter.toCamelCase(snakeCase);
+  const camelCase = toCamelCase(snakeCase);
 
   console.log(camelCase)
   /*
