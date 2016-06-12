@@ -2,6 +2,7 @@
 
 A library that converts objects to different case conventions. Useful when consuming APIs of services with different
 conventions, e.g. Python or Ruby.
+Key conversion is done by lodash, so every edge case should be handled.
 
 ## Features
 - `toCamelCase`
