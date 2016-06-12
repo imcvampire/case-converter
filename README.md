@@ -18,7 +18,7 @@ conventions, e.g. Python or Ruby.
 
   const snakeCase = {
     an_object: {
-      nested_string: 'nested content',
+      'kebab-case': 'nested content',
       nested_array: [{ an_object: 'something' }]
     },
     an_array: [
