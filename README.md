@@ -4,8 +4,9 @@ A library that converts objects to different case conventions. Useful when consu
 conventions, e.g. Python.
 
 ## Features
-- camelCase to snake_case
-- snake_case to camelCase
+- `toCamelCase`
+- `toSnakeCase`
+- `toKebabCase`
 
 ## Install
 `npm install case-converter`
@@ -13,7 +14,7 @@ conventions, e.g. Python.
 ## Example:
 
 ```JavaScript
-  import { toCamelCase, toSnakeCase } from 'case-converter'
+  import { toCamelCase } from 'case-converter'
 
   const snakeCase = {
     an_object: {
