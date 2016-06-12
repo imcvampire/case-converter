@@ -1,6 +1,6 @@
 /* global describe it */
 
-import { toCamelCase, toSnakeCase } from '../src'
+import { toCamelCase, toSnakeCase, toKebabCase } from '../src'
 import assert from 'assert'
 
 describe('to camelCase', () => {
@@ -146,6 +146,71 @@ describe('to snake_case', () => {
       ]
     }
     const result = toSnakeCase(before)
+    assert.deepEqual(expected, result)
+  })
+})
+
+describe('to kebab-case', () => {
+  it('simple objects', () => {
+    const before = { fieldOne: 'content one', 'field_two': 'content two' }
+    const expected = { 'field-one': 'content one', 'field-two': 'content two' }
+    const result = toKebabCase(before)
+    assert.deepEqual(expected, result)
+  })
+
+  it('nested objects', () => {
+    const before = {
+      fieldOne: { nestedFieldOne: 'content one', nestedFieldTwo: 'content two' },
+      fieldTwo: { nested_field_one: 'content one', nested_field_two: 'content two' }
+    }
+    const expected = {
+      'field-one': { 'nested-field-one': 'content one', 'nested-field-two': 'content two' },
+      'field-two': { 'nested-field-one': 'content one', 'nested-field-two': 'content two' }
+    }
+    const result = toKebabCase(before)
+    assert.deepEqual(expected, result)
+  })
+
+  it('objects in arrays', () => {
+    const before = [
+      { fieldOneOne: 'content one one', fieldOneTwo: 'content two two' },
+      { field_two_one: 'content two one', field_two_two: 'content two two' }
+    ]
+    const expected = [
+      { 'field-one-one': 'content one one', 'field-one-two': 'content two two' },
+      { 'field-two-one': 'content two one', 'field-two-two': 'content two two' }
+    ]
+    const result = toKebabCase(before)
+    assert.deepEqual(expected, result)
+  })
+
+  it('objects in arrays in arrays', () => {
+    const before = [
+      [{ fieldOneOne: 'content one one', fieldOneTwo: 'content two two' }],
+      [{ field_two_one: 'content two one', field_two_two: 'content two two' }]
+    ]
+    const expected = [
+      [{ 'field-one-one': 'content one one', 'field-one-two': 'content two two' }],
+      [{ 'field-two-one': 'content two one', 'field-two-two': 'content two two' }]
+    ]
+    const result = toKebabCase(before)
+    assert.deepEqual(expected, result)
+  })
+
+  it('objects in arrays in objects', () => {
+    const before = {
+      anArray: [
+        { fieldOneOne: 'content one one', fieldOneTwo: 'content two two' },
+        { field_two_one: 'content two one', field_two_two: 'content two two' }
+      ]
+    }
+    const expected = {
+      'an-array': [
+        { 'field-one-one': 'content one one', 'field-one-two': 'content two two' },
+        { 'field-two-one': 'content two one', 'field-two-two': 'content two two' }
+      ]
+    }
+    const result = toKebabCase(before)
     assert.deepEqual(expected, result)
   })
 })
