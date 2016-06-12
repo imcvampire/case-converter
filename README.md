@@ -33,7 +33,7 @@ conventions, e.g. Python or Ruby.
   /*
     {
       anObject: {
-        nestedString: 'nested content',
+        kebabCase: 'nested content',
         nestedArray: [{ anObject: 'something' }]
       },
       anArray: [
