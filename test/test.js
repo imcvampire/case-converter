@@ -3,9 +3,9 @@
 import { toCamelCase, toSnakeCase } from '../src'
 import assert from 'assert'
 
-describe('from snake_case to camelCase', () => {
+describe('to camelCase', () => {
   it('simple objects', () => {
-    const before = { field_one: 'content one', field_two: 'content two' }
+    const before = { field_one: 'content one', 'field-two': 'content two' }
     const expected = { fieldOne: 'content one', fieldTwo: 'content two' }
     const result = toCamelCase(before)
     assert.deepEqual(expected, result)
@@ -14,7 +14,7 @@ describe('from snake_case to camelCase', () => {
   it('nested objects', () => {
     const before = {
       field_one: { nested_field_one: 'content one', nested_field_two: 'content two' },
-      field_two: { nested_field_one: 'content one', nested_field_two: 'content two' }
+      field_two: { 'nested-field-one': 'content one', 'nested-field-two': 'content two' }
     }
     const expected = {
       fieldOne: { nestedFieldOne: 'content one', nestedFieldTwo: 'content two' },
@@ -27,7 +27,7 @@ describe('from snake_case to camelCase', () => {
   it('objects in arrays', () => {
     const before = [
       { field_one_one: 'content one one', field_one_two: 'content two two' },
-      { field_two_one: 'content two one', field_two_two: 'content two two' }
+      { 'field-two-one': 'content two one', 'field-two-two': 'content two two' }
     ]
     const expected = [
       { fieldOneOne: 'content one one', fieldOneTwo: 'content two two' },
@@ -40,7 +40,7 @@ describe('from snake_case to camelCase', () => {
   it('objects in arrays in arrays', () => {
     const before = [
       [{ field_one_one: 'content one one', field_one_two: 'content two two' }],
-      [{ field_two_one: 'content two one', field_two_two: 'content two two' }]
+      [{ 'field-two-one': 'content two one', 'field-two-two': 'content two two' }]
     ]
     const expected = [
       [{ fieldOneOne: 'content one one', fieldOneTwo: 'content two two' }],
@@ -54,7 +54,7 @@ describe('from snake_case to camelCase', () => {
     const before = {
       an_array: [
         { field_one_one: 'content one one', field_one_two: 'content two two' },
-        { field_two_one: 'content two one', field_two_two: 'content two two' }
+        { 'field-two-one': 'content two one', 'field-two-two': 'content two two' }
       ]
     }
     const expected = {
@@ -67,17 +67,27 @@ describe('from snake_case to camelCase', () => {
     assert.deepEqual(expected, result)
   })
 
-  it('undefined and null', () => {
-    const before = { field_one: null, field_two: undefined }
-    const expected = { fieldOne: null, fieldTwo: undefined }
+  it('undefined and null object', () => {
+    const before = {
+      an_array: [
+        { field_one_one: 'content one one', field_one_two: 'content two two' },
+        { 'field-two-one': 'content two one', 'field-two-two': 'content two two' }
+      ]
+    }
+    const expected = {
+      anArray: [
+        { fieldOneOne: 'content one one', fieldOneTwo: 'content two two' },
+        { fieldTwoOne: 'content two one', fieldTwoTwo: 'content two two' }
+      ]
+    }
     const result = toCamelCase(before)
     assert.deepEqual(expected, result)
   })
 })
 
-describe('from camelCase to snake_case', () => {
+describe('to snake_case', () => {
   it('simple objects', () => {
-    const before = { fieldOne: 'content one', fieldTwo: 'content two' }
+    const before = { fieldOne: 'content one', 'field-two': 'content two' }
     const expected = { field_one: 'content one', field_two: 'content two' }
     const result = toSnakeCase(before)
     assert.deepEqual(expected, result)
@@ -86,7 +96,7 @@ describe('from camelCase to snake_case', () => {
   it('nested objects', () => {
     const before = {
       fieldOne: { nestedFieldOne: 'content one', nestedFieldTwo: 'content two' },
-      fieldTwo: { nestedFieldOne: 'content one', nestedFieldTwo: 'content two' }
+      fieldTwo: { 'nested-field-one': 'content one', 'nested-field-two': 'content two' }
     }
     const expected = {
       field_one: { nested_field_one: 'content one', nested_field_two: 'content two' },
@@ -99,7 +109,7 @@ describe('from camelCase to snake_case', () => {
   it('objects in arrays', () => {
     const before = [
       { fieldOneOne: 'content one one', fieldOneTwo: 'content two two' },
-      { fieldTwoOne: 'content two one', fieldTwoTwo: 'content two two' }
+      { 'field-two-one': 'content two one', 'field-two-two': 'content two two' }
     ]
     const expected = [
       { field_one_one: 'content one one', field_one_two: 'content two two' },
@@ -112,7 +122,7 @@ describe('from camelCase to snake_case', () => {
   it('objects in arrays in arrays', () => {
     const before = [
       [{ fieldOneOne: 'content one one', fieldOneTwo: 'content two two' }],
-      [{ fieldTwoOne: 'content two one', fieldTwoTwo: 'content two two' }]
+      [{ 'field-two-one': 'content two one', 'field-two-two': 'content two two' }]
     ]
     const expected = [
       [{ field_one_one: 'content one one', field_one_two: 'content two two' }],
@@ -126,7 +136,7 @@ describe('from camelCase to snake_case', () => {
     const before = {
       anArray: [
         { fieldOneOne: 'content one one', fieldOneTwo: 'content two two' },
-        { fieldTwoOne: 'content two one', fieldTwoTwo: 'content two two' }
+        { 'field-two-one': 'content two one', 'field-two-two': 'content two two' }
       ]
     }
     const expected = {
@@ -135,12 +145,6 @@ describe('from camelCase to snake_case', () => {
         { field_two_one: 'content two one', field_two_two: 'content two two' }
       ]
     }
-    const result = toSnakeCase(before)
-    assert.deepEqual(expected, result)
-  })
-  it('undefined and null', () => {
-    const before = { fieldOne: null, fieldTwo: undefined }
-    const expected = { field_one: null, field_two: undefined }
     const result = toSnakeCase(before)
     assert.deepEqual(expected, result)
   })
