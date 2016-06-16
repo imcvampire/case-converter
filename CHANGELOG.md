@@ -7,6 +7,10 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ### Changed
 ### Fixed
 
+## [0.3.2] - 2016-06-16
+### Fixed
+- tonic example
+
 ## [0.3.1] - 2016-06-16
 ### Added
 - added tonic example

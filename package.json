@@ -1,6 +1,6 @@
 {
   "name": "case-converter",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "description": "transform object to use different case conventions",
   "main": "./dist/index.js",
   "files": [
@@ -29,7 +29,7 @@
     "url": "https://github.com/Moezalez/case-converter/issues"
   },
   "homepage": "https://github.com/Moezalez/case-converter#readme",
-  "tonicExampleFilename": "./examples/example.js",
+  "tonicExampleFilename": "example.js",
   "devDependencies": {
     "babel": "^6.5.2",
     "babel-cli": "^6.9.0",
