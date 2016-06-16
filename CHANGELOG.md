@@ -7,6 +7,10 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ### Changed
 ### Fixed
 
+## [1.0.0] - 2016-06-16
+### Changed
+- export is not completely via ES6 modules
+
 ## [0.3.2] - 2016-06-16
 ### Fixed
 - tonic example
