@@ -29,6 +29,7 @@
     "url": "https://github.com/Moezalez/case-converter/issues"
   },
   "homepage": "https://github.com/Moezalez/case-converter#readme",
+  "tonicExampleFilename": "./examples/example.js",
   "devDependencies": {
     "babel": "^6.5.2",
     "babel-cli": "^6.9.0",
