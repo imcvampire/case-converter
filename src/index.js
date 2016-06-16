@@ -33,4 +33,4 @@ export const toCamelCase = obj => convertCase(obj, camelCase)
 export const toSnakeCase = obj => convertCase(obj, snakeCase)
 export const toKebabCase = obj => convertCase(obj, kebabCase)
 
-module.exports = { toCamelCase, toSnakeCase, toKebabCase }
+export default { toCamelCase, toSnakeCase, toKebabCase }
