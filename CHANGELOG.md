@@ -7,7 +7,11 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ### Changed
 ### Fixed
 
-## [0.2.1] - 2016-06-09
+## [0.3.1] - 2016-06-16
+### Added
+- added tonic example
+
+## [0.2.1] - 2016-06-12
 ### Added
 - kebab Case
 
