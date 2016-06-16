@@ -4,7 +4,7 @@ A library that converts objects to different case conventions. Useful when consu
 conventions, e.g. Python or Ruby.
 Key conversion is done by lodash, so every edge case should be handled.
 
-[Demo](https://tonicdev.com/5762971b5cc7da12007bd462/57629aa350001a1300344968)
+[Demo](https://tonicdev.com/npm/case-converter)
 
 ## Features
 - `toCamelCase`
