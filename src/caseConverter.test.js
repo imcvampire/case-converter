@@ -1,7 +1,6 @@
 /* global describe it */
-
-import { toCamelCase, toSnakeCase, toKebabCase } from '../src'
 import assert from 'assert'
+import { toCamelCase, toSnakeCase, toKebabCase } from './index'
 
 describe('to camelCase', () => {
   it('simple objects', () => {
