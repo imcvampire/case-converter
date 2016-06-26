@@ -1,4 +1,4 @@
-# case-converter [![npm version](https://badge.fury.io/js/case-converter.svg)](https://badge.fury.io/js/case-converter) [![Build Status](https://travis-ci.org/Moezalez/case-converter.svg?branch=master)](https://travis-ci.org/Moezalez/case-converter) [![codecov](https://codecov.io/gh/Moezalez/case-converter/branch/master/graph/badge.svg)](https://codecov.io/gh/Moezalez/case-converter)
+# case-converter [![npm version](https://badge.fury.io/js/case-converter.svg)](https://badge.fury.io/js/case-converter) 
 
 A lightweight library that converts objects to different case conventions. Great for consuming APIs of services with different conventions, e.g. Python or Ruby.
 
