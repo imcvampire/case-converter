@@ -8,11 +8,10 @@ import kebabCase from 'lodash.kebabcase'
  * @param {function} function to convert key.
  * @return converted object
  */
-
 const convertCase = (oldObject, converterFunction) => {
   let newObject
 
-  if (!oldObject || typeof oldObject !== 'object') {
+  if (!oldObject || typeof oldObject !== 'object' || !Object.keys(oldObject).length) {
     return oldObject
   }
 

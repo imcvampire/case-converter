@@ -82,7 +82,17 @@ describe('to camelCase', () => {
     const result = toCamelCase(before)
     assert.deepEqual(expected, result)
   })
+
+  it('objects containging dates', () => {
+    const date = new Date()
+    const before = { 'a_date': date }
+    const expected = { 'aDate': date }
+    const result = toCamelCase(before)
+    assert(result.aDate instanceof Date, true)
+    assert.deepEqual(expected, result)
+  })
 })
+
 
 describe('to snake_case', () => {
   it('simple objects', () => {
@@ -147,7 +157,17 @@ describe('to snake_case', () => {
     const result = toSnakeCase(before)
     assert.deepEqual(expected, result)
   })
+
+  it('objects containging dates', () => {
+    const date = new Date()
+    const before = { 'aDate': date }
+    const expected = { 'a_date': date }
+    const result = toSnakeCase(before)
+    assert(result.a_date instanceof Date, true)
+    assert.deepEqual(expected, result)
+  })
 })
+
 
 describe('to kebab-case', () => {
   it('simple objects', () => {
@@ -210,6 +230,15 @@ describe('to kebab-case', () => {
       ]
     }
     const result = toKebabCase(before)
+    assert.deepEqual(expected, result)
+  })
+
+  it('objects containging dates', () => {
+    const date = new Date()
+    const before = { 'aDate': date }
+    const expected = { 'a-date': date }
+    const result = toKebabCase(before)
+    assert(result['a-date'] instanceof Date, true)
     assert.deepEqual(expected, result)
   })
 })
