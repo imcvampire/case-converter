@@ -1,0 +1,6 @@
+status:
+  project:
+    default:
+      target: auto
+      threshold: null
+      branches: null
