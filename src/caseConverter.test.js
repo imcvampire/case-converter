@@ -316,7 +316,7 @@ describe("to PascalCase", () => {
   it("simple objects", () => {
     const before = { field_one: "content one", "field-two": "content two" };
     const expected = { FieldOne: "content one", FieldTwo: "content two" };
-    const result = toCamelCase(before);
+    const result = toPascalCase(before);
     assert.deepEqual(expected, result);
   });
 
@@ -338,7 +338,7 @@ describe("to PascalCase", () => {
       },
       FieldTwo: { NestedFieldOne: "content one", NestedFieldTwo: "content two" }
     };
-    const result = toCamelCase(before);
+    const result = toPascalCase(before);
     assert.deepEqual(expected, result);
   });
 
@@ -351,7 +351,7 @@ describe("to PascalCase", () => {
       { FieldOneOne: "content one one", FieldOneTwo: "content two two" },
       { FieldTwoOne: "content two one", FieldTwoTwo: "content two two" }
     ];
-    const result = toCamelCase(before);
+    const result = toPascalCase(before);
     assert.deepEqual(expected, result);
   });
 
@@ -369,7 +369,7 @@ describe("to PascalCase", () => {
       [{ FieldOneOne: "content one one", FieldOneTwo: "content two two" }],
       [{ FieldTwoOne: "content two one", FieldTwoTwo: "content two two" }]
     ];
-    const result = toCamelCase(before);
+    const result = toPascalCase(before);
     assert.deepEqual(expected, result);
   });
 
@@ -389,7 +389,7 @@ describe("to PascalCase", () => {
         { FieldTwoOne: "content two one", FieldTwoTwo: "content two two" }
       ]
     };
-    const result = toCamelCase(before);
+    const result = toPascalCase(before);
     assert.deepEqual(expected, result);
   });
 
@@ -409,7 +409,7 @@ describe("to PascalCase", () => {
         { FieldTwoOne: "content two one", FieldTwoTwo: "content two two" }
       ]
     };
-    const result = toCamelCase(before);
+    const result = toPascalCase(before);
     assert.deepEqual(expected, result);
   });
 
@@ -417,8 +417,8 @@ describe("to PascalCase", () => {
     const date = new Date();
     const before = { a_date: date };
     const expected = { ADate: date };
-    const result = toCamelCase(before);
-    assert(result.aDate instanceof Date, true);
+    const result = toPascalCase(before);
+    assert(result.ADate instanceof Date, true);
     assert.deepEqual(expected, result);
   });
 });

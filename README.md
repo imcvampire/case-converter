@@ -8,6 +8,7 @@ A lightweight library that converts objects to different case conventions. Great
 - `toCamelCase`
 - `toSnakeCase`
 - `toKebabCase`
+- `toPascalCase`
 
 ## Install
 `npm install case-converter`
