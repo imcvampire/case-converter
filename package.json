@@ -8,14 +8,13 @@
   ],
   "scripts": {
     "cm": "git-cz",
-    "precommit": "npm run cover && npm run check-coverage",
+    "precommit": "npm run cover",
     "check-coverage": "nyc check-coverage --statements 100 --branches 100 --functions 100 --lines 100",
     "report-coverage": "cat ./coverage/lcov.info | codecov token=$CODECOV_TOKEN",
     "build": "webpack",
     "prebuild": "rm -rf dist",
-    "watch:test": "npm test -- -w",
-    "test": "NODE_ENV=test mocha src/**.test.js* --compilers js:babel-register",
-    "cover": "nyc  --reporter=lcov --reporter=text npm t",
+    "test": "jest",
+    "cover": "npm test -- --coverage",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
   "repository": {
@@ -47,8 +46,7 @@
     "commitizen": "^2.9.6",
     "cz-conventional-changelog": "^2.0.0",
     "husky": "^0.14.3",
-    "mocha": "2.5.3",
-    "nyc": "6.6.1",
+    "jest": "^21.2.1",
     "semantic-release": "^4.3.5",
     "standard": "7.1.2",
     "webpack": "1.13.1"
@@ -62,14 +60,7 @@
     "presets": [
       "es2015",
       "react"
-    ],
-    "env": {
-      "test": {
-        "plugins": [
-          "__coverage__"
-        ]
-      }
-    }
+    ]
   },
   "standard": {
     "globals": [
@@ -77,21 +68,19 @@
       "it"
     ]
   },
-  "nyc": {
-    "extension": [
-      ".jsx",
-      ".es6"
-    ],
-    "exclude": [
-      "src/**/*.test.jsx",
-      "src/**/*.test.js"
-    ],
-    "sourceMap": false,
-    "instrument": false
-  },
   "config": {
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "jest": {
+    "coverageThreshold": {
+      "global": {
+        "statements": 100,
+        "branches": 100,
+        "functions": 100,
+        "lines": 100
+      }
     }
   }
 }
