@@ -1,6 +1,6 @@
-import snakeCase from 'lodash.snakecase'
-import camelCase from 'lodash.camelcase'
-import kebabCase from 'lodash.kebabcase'
+import snakeCase from "lodash.snakecase";
+import camelCase from "lodash.camelcase";
+import kebabCase from "lodash.kebabcase";
 
 /**
  * deeply converts keys of an object from one case to another
@@ -9,27 +9,33 @@ import kebabCase from 'lodash.kebabcase'
  * @return converted object
  */
 const convertCase = (oldObject, converterFunction) => {
-  let newObject
+  let newObject;
 
-  if (!oldObject || typeof oldObject !== 'object' || !Object.keys(oldObject).length) {
-    return oldObject
+  if (
+    !oldObject ||
+    typeof oldObject !== "object" ||
+    !Object.keys(oldObject).length
+  ) {
+    return oldObject;
   }
 
   if (Array.isArray(oldObject)) {
-    newObject = oldObject.map(element => convertCase(element, converterFunction))
+    newObject = oldObject.map(element =>
+      convertCase(element, converterFunction)
+    );
   } else {
-    newObject = {}
+    newObject = {};
     Object.keys(oldObject).forEach(oldKey => {
-      const newKey = converterFunction(oldKey)
-      newObject[newKey] = convertCase(oldObject[oldKey], converterFunction)
-    })
+      const newKey = converterFunction(oldKey);
+      newObject[newKey] = convertCase(oldObject[oldKey], converterFunction);
+    });
   }
 
-  return newObject
-}
+  return newObject;
+};
 
-export const toCamelCase = obj => convertCase(obj, camelCase)
-export const toSnakeCase = obj => convertCase(obj, snakeCase)
-export const toKebabCase = obj => convertCase(obj, kebabCase)
+export const toCamelCase = obj => convertCase(obj, camelCase);
+export const toSnakeCase = obj => convertCase(obj, snakeCase);
+export const toKebabCase = obj => convertCase(obj, kebabCase);
 
-export default { toCamelCase, toSnakeCase, toKebabCase }
+export default { toCamelCase, toSnakeCase, toKebabCase };

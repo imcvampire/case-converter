@@ -2,20 +2,20 @@
   "name": "case-converter",
   "description": "transform object to use different case conventions",
   "main": "./dist/index.js",
-  "files": [
-    "dist",
-    "README.md"
-  ],
+  "files": ["dist", "README.md"],
   "scripts": {
     "cm": "git-cz",
-    "precommit": "npm run cover",
-    "check-coverage": "nyc check-coverage --statements 100 --branches 100 --functions 100 --lines 100",
-    "report-coverage": "cat ./coverage/lcov.info | codecov token=$CODECOV_TOKEN",
+    "precommit": "lint-staged && npm run cover",
+    "check-coverage":
+      "nyc check-coverage --statements 100 --branches 100 --functions 100 --lines 100",
+    "report-coverage":
+      "cat ./coverage/lcov.info | codecov token=$CODECOV_TOKEN",
     "build": "webpack",
     "prebuild": "rm -rf dist",
     "test": "jest",
     "cover": "npm test -- --coverage",
-    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
+    "semantic-release":
+      "semantic-release pre && npm publish && semantic-release post"
   },
   "repository": {
     "type": "git",
@@ -47,6 +47,8 @@
     "cz-conventional-changelog": "^2.0.0",
     "husky": "^0.14.3",
     "jest": "^21.2.1",
+    "lint-staged": "^4.3.0",
+    "prettier": "^1.7.4",
     "semantic-release": "^4.3.5",
     "standard": "7.1.2",
     "webpack": "1.13.1"
@@ -57,21 +59,18 @@
     "lodash.snakecase": "^4.0.1"
   },
   "babel": {
-    "presets": [
-      "es2015",
-      "react"
-    ]
+    "presets": ["es2015", "react"]
   },
   "standard": {
-    "globals": [
-      "describe",
-      "it"
-    ]
+    "globals": ["describe", "it"]
   },
   "config": {
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
     }
+  },
+  "lint-staged": {
+    "*.{js,json}": ["prettier --write", "git add"]
   },
   "jest": {
     "coverageThreshold": {
