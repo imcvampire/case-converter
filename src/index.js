@@ -1,6 +1,8 @@
 import snakeCase from "lodash.snakecase";
 import camelCase from "lodash.camelcase";
 import kebabCase from "lodash.kebabcase";
+import upperFirst from "lodash.upperfirst";
+import flow from "lodash.flow";
 
 /**
  * deeply converts keys of an object from one case to another
@@ -37,5 +39,6 @@ const convertCase = (oldObject, converterFunction) => {
 export const toCamelCase = obj => convertCase(obj, camelCase);
 export const toSnakeCase = obj => convertCase(obj, snakeCase);
 export const toKebabCase = obj => convertCase(obj, kebabCase);
+export const toPascalCase = obj => convertCase(obj, flow(camelCase, upperFirst));
 
-export default { toCamelCase, toSnakeCase, toKebabCase };
+export default { toCamelCase, toSnakeCase, toKebabCase, toPascalCase };
