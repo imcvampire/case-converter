@@ -7,7 +7,7 @@
     "README.md"
   ],
   "scripts": {
-    "commit": "git-cz",
+    "cm": "git-cz",
     "precommit": "npm run cover && npm run check-coverage",
     "check-coverage": "nyc check-coverage --statements 100 --branches 100 --functions 100 --lines 100",
     "report-coverage": "cat ./coverage/lcov.info | codecov token=$CODECOV_TOKEN",
@@ -44,8 +44,8 @@
     "babel-preset-react": "6.5.0",
     "babel-register": "6.9.0",
     "codecov": "1.0.1",
-    "commitizen": "2.8.2",
-    "cz-conventional-changelog": "1.1.6",
+    "commitizen": "^2.9.6",
+    "cz-conventional-changelog": "^2.0.0",
     "husky": "^0.14.3",
     "mocha": "2.5.3",
     "nyc": "6.6.1",
@@ -57,9 +57,6 @@
     "lodash.camelcase": "^4.1.1",
     "lodash.kebabcase": "^4.0.1",
     "lodash.snakecase": "^4.0.1"
-  },
-  "czConfig": {
-    "path": "node_modules/cz-conventional-changelog"
   },
   "babel": {
     "presets": [
@@ -91,5 +88,10 @@
     ],
     "sourceMap": false,
     "instrument": false
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }
