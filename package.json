@@ -8,6 +8,7 @@
   ],
   "scripts": {
     "commit": "git-cz",
+    "precommit": "npm run cover && npm run check-coverage",
     "check-coverage": "nyc check-coverage --statements 100 --branches 100 --functions 100 --lines 100",
     "report-coverage": "cat ./coverage/lcov.info | codecov token=$CODECOV_TOKEN",
     "build": "webpack",
@@ -45,7 +46,7 @@
     "codecov": "1.0.1",
     "commitizen": "2.8.2",
     "cz-conventional-changelog": "1.1.6",
-    "ghooks": "1.2.4",
+    "husky": "^0.14.3",
     "mocha": "2.5.3",
     "nyc": "6.6.1",
     "semantic-release": "^4.3.5",
@@ -59,11 +60,6 @@
   },
   "czConfig": {
     "path": "node_modules/cz-conventional-changelog"
-  },
-  "config": {
-    "ghooks": {
-      "pre-commit": "npm run cover && npm run check-coverage"
-    }
   },
   "babel": {
     "presets": [
