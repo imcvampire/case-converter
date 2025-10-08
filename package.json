@@ -2,20 +2,22 @@
   "name": "case-converter",
   "description": "transform object to use different case conventions",
   "main": "./dist/index.js",
-  "files": ["dist", "README.md"],
+  "files": [
+    "dist",
+    "README.md"
+  ],
   "scripts": {
     "cm": "git-cz",
     "precommit": "lint-staged && npm run cover",
-    "check-coverage":
-      "nyc check-coverage --statements 100 --branches 100 --functions 100 --lines 100",
-    "report-coverage":
-      "cat ./coverage/lcov.info | codecov token=$CODECOV_TOKEN",
+    "check-coverage": "nyc check-coverage --statements 100 --branches 100 --functions 100 --lines 100",
+    "report-coverage": "cat ./coverage/lcov.info | codecov token=$CODECOV_TOKEN",
     "build": "webpack",
     "prebuild": "rm -rf dist",
     "test": "jest",
     "cover": "npm test -- --coverage",
-    "semantic-release":
-      "semantic-release pre && npm publish && semantic-release post"
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post",
+    "prepare": "npm run snyk-protect",
+    "snyk-protect": "snyk-protect"
   },
   "repository": {
     "type": "git",
@@ -37,34 +39,41 @@
   "homepage": "https://github.com/Moezalez/case-converter#readme",
   "tonicExampleFilename": "example.js",
   "devDependencies": {
-    "babel-loader": "6.2.4",
+    "babel-loader": "7.0.0",
     "babel-plugin-__coverage__": "11.0.0",
-    "babel-preset-es2015": "6.9.0",
+    "babel-preset-es2015": "6.24.1",
     "babel-preset-react": "6.5.0",
     "babel-register": "6.9.0",
     "codecov": "3.7.1",
-    "commitizen": "^2.9.6",
+    "commitizen": "^4.2.5",
     "cz-conventional-changelog": "^2.0.0",
     "husky": "^0.14.3",
-    "jest": "^21.2.1",
-    "lint-staged": "^4.3.0",
+    "jest": "^30.0.0",
+    "lint-staged": "^8.0.0",
     "prettier": "^1.7.4",
-    "semantic-release": "^4.3.5",
-    "standard": "7.1.2",
-    "webpack": "1.13.1"
+    "semantic-release": "^17.2.3",
+    "standard": "16.0.0",
+    "webpack": "5.94.0"
   },
   "dependencies": {
     "lodash.camelcase": "^4.1.1",
     "lodash.flow": "^3.5.0",
     "lodash.kebabcase": "^4.0.1",
     "lodash.snakecase": "^4.0.1",
-    "lodash.upperfirst": "^4.3.1"
+    "lodash.upperfirst": "^4.3.1",
+    "@snyk/protect": "latest"
   },
   "babel": {
-    "presets": ["es2015", "react"]
+    "presets": [
+      "es2015",
+      "react"
+    ]
   },
   "standard": {
-    "globals": ["describe", "it"]
+    "globals": [
+      "describe",
+      "it"
+    ]
   },
   "config": {
     "commitizen": {
@@ -72,7 +81,10 @@
     }
   },
   "lint-staged": {
-    "*.{js,json}": ["prettier --write", "git add"]
+    "*.{js,json}": [
+      "prettier --write",
+      "git add"
+    ]
   },
   "jest": {
     "coverageThreshold": {
@@ -83,5 +95,6 @@
         "lines": 100
       }
     }
-  }
+  },
+  "snyk": true
 }
